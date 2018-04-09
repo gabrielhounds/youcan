@@ -25,14 +25,11 @@ img {
 #main {
   width: 100%;
   height: 100%;
-  background-color: purple;
   display: grid;
   grid-template-columns: 510px auto 510px;
   grid-template-rows: 50% 50%;
-}
-
-#main div {
-  position: relative;
+  background-image: url(bgPattern.jpg);
+  overflow: hidden;
 }
 
 .frame {
@@ -40,68 +37,197 @@ img {
   perspective: 1000px;
 }
 
-.frame1 {
-  grid-column: 1;
-  grid-row: 1;
-  background-color: #ff74f8;
-  z-index: 99;
-}
-
-.frame1 .img1 {
+.img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(bg_frame1.jpg);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden !important;
+  pointer-events: none;
+}
+
+.text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden !important;
+  pointer-events: none;
+  transform: rotateY(180deg);
+}
+
+.back {
+  transform: rotateY(180deg);
 }
 
 .center {
   grid-column: 2;
   grid-row: 1 / span 2;
-  background-color: #0092ff;
   background-image: url(bgPattern.jpg);
   background-repeat: repeat-y;
 }
 
 .center .logo {
-  justify-self: center;
-  align-self: center;
-  top: 30%;
-  left: 5%;
-  width: 90%;
-  height: 40%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 137px;
+  height: 139px;
+  background-image: url(youCan_logo.png);
+}
+
+.frame1 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.frame1 .img1.front {
+  background-image: url(bg_frame1.jpg);
+}
+
+.frame1 .img1.back {
+  background-image: url(bg_frame1.jpg);
+}
+
+.frame1 .text {
+  background-image: url(txt_frame1.png);
 }
 
 .frame2 {
   grid-column: 3;
   grid-row: 1;
-  background-color: #6dff60;
 }
 
-.frame2 .img2 {
-  width: 100%;
-  height: 100%;
+.frame2 .img2.front {
   background-image: url(bg_frame2.jpg);
+}
+
+.frame2 .img2.back {
+  background-image: url(bg_frame2.jpg);
+}
+
+.frame2 .text {
+  background-image: url(txt_frame2.png);
 }
 
 .frame3 {
   grid-column: 1;
   grid-row: 2;
-  background-color: #8c003d;
 }
 
-.frame3 .img3 {
-  width: 100%;
-  height: 100%;
+.frame3 .img3.front {
   background-image: url(bg_frame3.jpg);
+}
+
+.frame3 .img3.back {
+  background-image: url(bg_frame3.jpg);
+}
+
+.frame3 .text {
+  background-image: url(txt_frame3.png);
 }
 
 .frame4 {
   grid-column: 3;
   grid-row: 2;
-  background-color: #00ddff;
 }
 
-.frame4 .img4 {
+.frame4 .img4.front {
+  background-image: url(bg_frame4.jpg);
+}
+
+.frame4 .img4.back {
+  background-image: url(bg_frame4.jpg);
+}
+
+.frame4 .text {
+  background-image: url(txt_frame4.png);
+}
+
+.overlay {
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(bg_frame4.jpg);
+  background-image: url(bgPattern.jpg);
+  z-index: 99;
+}
+
+.overlay .logo {
+  top: 180px;
+  left: 56px;
+  width: 137px;
+  height: 139px;
+  background-image: url(youCan_logo.png);
+}
+
+.overlay .bigImg {
+  width: 1032px;
+  height: 100%;
+  top: 0;
+  right: 0;
+}
+
+.overlay .bigText {
+  width: 1032px;
+  height: 100%;
+  top: 0;
+  right: 0;
+}
+
+.overlay1 {
+  opacity: 0.0;
+  display: none;
+}
+
+.overlay1 .bigImg {
+  background-image: url(bigImg_frame1.jpg);
+}
+
+.overlay1 .bigText {
+  background-image: url(bigText_frame1.png);
+}
+
+.overlay2 {
+  opacity: 0.0;
+  display: none;
+}
+
+.overlay2 .bigImg {
+  background-image: url(bigImg_frame2.jpg);
+}
+
+.overlay2 .bigText {
+  background-image: url(bigText_frame2.png);
+}
+
+.overlay3 {
+  opacity: 0.0;
+  display: none;
+}
+
+.overlay3 .bigImg {
+  background-image: url(bigImg_frame3.jpg);
+}
+
+.overlay3 .bigText {
+  background-image: url(bigText_frame3.png);
+}
+
+.overlay4 {
+  opacity: 0.0;
+  display: none;
+}
+
+.overlay4 .bigImg {
+  background-image: url(bigImg_frame4.jpg);
+}
+
+.overlay4 .bigText {
+  background-image: url(bigText_frame4.png);
 }
