@@ -180,6 +180,14 @@ img {
   right: 0;
 }
 
+.overlay .cta {
+  left: 614px;
+  bottom: 90px;
+  width: 400px;
+  height: 56px;
+  background-image: url(learnMore.png);
+}
+
 .overlay1 {
   opacity: 0.0;
   display: none;
@@ -191,6 +199,10 @@ img {
 
 .overlay1 .bigText {
   background-image: url(bigText_frame1.png);
+}
+
+.overlay1 .cta {
+  background-color: #f5ae3a;
 }
 
 .overlay2 {
@@ -206,6 +218,10 @@ img {
   background-image: url(bigText_frame2.png);
 }
 
+.overlay2 .cta {
+  background-color: #934293;
+}
+
 .overlay3 {
   opacity: 0.0;
   display: none;
@@ -219,6 +235,10 @@ img {
   background-image: url(bigText_frame3.png);
 }
 
+.overlay3 .cta {
+  background-color: #dd2a35;
+}
+
 .overlay4 {
   opacity: 0.0;
   display: none;
@@ -230,4 +250,8 @@ img {
 
 .overlay4 .bigText {
   background-image: url(bigText_frame4.png);
+}
+
+.overlay4 .cta {
+  background-color: #53b13e;
 }

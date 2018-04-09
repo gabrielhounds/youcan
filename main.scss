@@ -256,6 +256,14 @@ img {
 		height: 100%;
 		top: 0;
 		right: 0;
+	}
+
+	.cta {
+		left: 614px;
+		bottom: 90px;
+		width: 400px;
+		height: 56px;
+		background-image: url(learnMore.png);
 
 	}
 }
@@ -269,6 +277,9 @@ img {
 	.bigText {
 		background-image: url(bigText_frame1.png);
 	}
+	.cta {
+		background-color: #f5ae3a;
+	}
 }
 
 .overlay2 {
@@ -279,6 +290,9 @@ img {
 	}
 	.bigText {
 		background-image: url(bigText_frame2.png);
+	}
+	.cta {
+		background-color: #934293;
 	}
 }
 
@@ -291,6 +305,10 @@ img {
 	.bigText {
 		background-image: url(bigText_frame3.png);
 	}
+	.cta {
+		background-color: #dd2a35;
+
+	}
 }
 
 .overlay4 {
@@ -301,6 +319,9 @@ img {
 	}
 	.bigText {
 		background-image: url(bigText_frame4.png);
+	}
+	.cta {
+		background-color: #53b13e;
 	}
 }
 
