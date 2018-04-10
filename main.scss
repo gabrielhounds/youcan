@@ -80,6 +80,18 @@ $mobile:  "(max-device-width: 767px)";
 	}
 }
 
+@mixin tablet {
+	@media all and (min-width: 768px) and (max-width: 1280px) {
+		@content;
+	}
+}
+
+@mixin mobile {
+	@media all and (max-width: 768px) {
+		@content;
+	}
+}
+
 body, * {
 	margin: 0;
 	padding: 0;
@@ -104,7 +116,18 @@ img {
 	transform: translate(-50%);
 	width: 1280px;
 	height: 500px;
+
+	@include tablet {
+		overflow: hidden;
+		width: 100%;
+		height: 500px;
 	}
+	@include mobile {
+		width: 100%;
+		height: 100%;
+	}
+
+}
 
 #main {
 	width: 100%;
@@ -114,6 +137,16 @@ img {
 	grid-template-rows: 50% 50%;
 	background-image: url(bgPattern.jpg);
 	overflow: hidden;
+
+	@include tablet {
+		grid-template-columns: 37% 26% 37%;
+	}
+	@include mobile {
+		grid-template-columns: 50% 50%;
+		grid-template-rows: 33.33% 33.33% 33.33;
+		width: 100%;
+		height: 100%;
+	}
 }
 
 .frame {
@@ -163,7 +196,6 @@ img {
 		height: 139px;
 		background-image: url(youCan_logo.png);
 	}
-
 }
 
 .frame1 {
@@ -215,6 +247,7 @@ img {
 .frame4 {
 	grid-column: 3;
 	grid-row: 2;
+
 	.img4.front{
 		background-image: url(bg_frame4.jpg);
 	}
@@ -233,7 +266,8 @@ img {
 	height: 100%;
 	background-image: url(bgPattern.jpg);
 	z-index: 99;
-
+	perspective: 1000px;
+	perspective-origin: 0%;
 
 	.logo {
 		top: 180px;
@@ -261,16 +295,91 @@ img {
 	.cta {
 		left: 614px;
 		bottom: 90px;
-		width: 400px;
-		height: 56px;
-		background-image: url(learnMore.png);
+		width: 291px;
+		height: 58px;
+		background-image: url(cta_learnMore.png);
+		background-size: 100%;
+		background-repeat: no-repeat;
+	}
+
+	.backBtn {
+		top: 8px;
+		left: 272px;
+		width: 64px;
+		height: 60px;
+
+		.backBtnTxt {
+			width: 100%;
+			height: 100%;
+			background-image: url(back_text.png);
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+
+		.backBtnArrow {
+			width: 100%;
+			height: 100%;
+			background-image: url(back_arrow.png);
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
 
 	}
+
+	.watchVideo {
+		width: 96px;
+		height: 80px;
+		bottom: 18px;
+		right: 20px;
+
+		.watchVideoText {
+			width: 100%;
+			height: 100%;
+			background-image: url(watchVideo_text.png);
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+
+		.watchVideoIcon {
+			width: 100%;
+			height: 100%;
+			background-image: url(watchVideo_icon.png);
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+
+	}
+
+	.videoOverlay {
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.6);
+
+		.videoHolder {
+			top: 18px;
+			left: 352px;
+			width: 820px;
+			height: 460px;
+			background-color: rgba(255, 255, 255, 0.8);
+
+
+			.videoClose {
+				top: 0;
+				right: 0;
+				width: 22px;
+				height: 22px;
+				background-color: #000;
+				background-image: url(videoCloseBtn.png);
+
+			}
+
+		}
+
+	}
+
 }
 
 .overlay1 {
-	opacity: 0.0;
-	display: none;
 	.bigImg {
 		background-image: url(bigImg_frame1.jpg);
 	}
@@ -283,8 +392,6 @@ img {
 }
 
 .overlay2 {
-	opacity: 0.0;
-	display: none;
 	.bigImg {
 		background-image: url(bigImg_frame2.jpg);
 	}
@@ -297,8 +404,6 @@ img {
 }
 
 .overlay3 {
-	opacity: 0.0;
-	display: none;
 	.bigImg {
 		background-image: url(bigImg_frame3.jpg);
 	}
@@ -312,8 +417,6 @@ img {
 }
 
 .overlay4 {
-	opacity: 0.0;
-	display: none;
 	.bigImg {
 		background-image: url(bigImg_frame4.jpg);
 	}
@@ -324,7 +427,6 @@ img {
 		background-color: #53b13e;
 	}
 }
-
 
 
 

@@ -22,6 +22,21 @@ img {
   height: 500px;
 }
 
+@media all and (min-width: 768px) and (max-width: 1280px) {
+  #ad {
+    overflow: hidden;
+    width: 100%;
+    height: 500px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  #ad {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 #main {
   width: 100%;
   height: 100%;
@@ -30,6 +45,21 @@ img {
   grid-template-rows: 50% 50%;
   background-image: url(bgPattern.jpg);
   overflow: hidden;
+}
+
+@media all and (min-width: 768px) and (max-width: 1280px) {
+  #main {
+    grid-template-columns: 37% 26% 37%;
+  }
+}
+
+@media all and (max-width: 768px) {
+  #main {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 33.33% 33.33% 33.33;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .frame {
@@ -156,6 +186,8 @@ img {
   height: 100%;
   background-image: url(bgPattern.jpg);
   z-index: 99;
+  perspective: 1000px;
+  perspective-origin: 0%;
 }
 
 .overlay .logo {
@@ -183,14 +215,80 @@ img {
 .overlay .cta {
   left: 614px;
   bottom: 90px;
-  width: 400px;
-  height: 56px;
-  background-image: url(learnMore.png);
+  width: 291px;
+  height: 58px;
+  background-image: url(cta_learnMore.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
-.overlay1 {
-  opacity: 0.0;
-  display: none;
+.overlay .backBtn {
+  top: 8px;
+  left: 272px;
+  width: 64px;
+  height: 60px;
+}
+
+.overlay .backBtn .backBtnTxt {
+  width: 100%;
+  height: 100%;
+  background-image: url(back_text.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.overlay .backBtn .backBtnArrow {
+  width: 100%;
+  height: 100%;
+  background-image: url(back_arrow.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.overlay .watchVideo {
+  width: 96px;
+  height: 80px;
+  bottom: 18px;
+  right: 20px;
+}
+
+.overlay .watchVideo .watchVideoText {
+  width: 100%;
+  height: 100%;
+  background-image: url(watchVideo_text.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.overlay .watchVideo .watchVideoIcon {
+  width: 100%;
+  height: 100%;
+  background-image: url(watchVideo_icon.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.overlay .videoOverlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.overlay .videoOverlay .videoHolder {
+  top: 18px;
+  left: 352px;
+  width: 820px;
+  height: 460px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.overlay .videoOverlay .videoHolder .videoClose {
+  top: 0;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  background-color: #000;
+  background-image: url(videoCloseBtn.png);
 }
 
 .overlay1 .bigImg {
@@ -205,11 +303,6 @@ img {
   background-color: #f5ae3a;
 }
 
-.overlay2 {
-  opacity: 0.0;
-  display: none;
-}
-
 .overlay2 .bigImg {
   background-image: url(bigImg_frame2.jpg);
 }
@@ -222,11 +315,6 @@ img {
   background-color: #934293;
 }
 
-.overlay3 {
-  opacity: 0.0;
-  display: none;
-}
-
 .overlay3 .bigImg {
   background-image: url(bigImg_frame3.jpg);
 }
@@ -237,11 +325,6 @@ img {
 
 .overlay3 .cta {
   background-color: #dd2a35;
-}
-
-.overlay4 {
-  opacity: 0.0;
-  display: none;
 }
 
 .overlay4 .bigImg {
