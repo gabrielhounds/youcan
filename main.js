@@ -86,7 +86,7 @@ function init() {
 	$('.videoClose').click( function(e){
 		t.set('.videoOverlay', {autoAlpha:0});
 		handleOverlayClose();
-	})
+	});
 
 
 }

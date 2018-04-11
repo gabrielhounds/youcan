@@ -120,13 +120,24 @@ img {
 	@include tablet {
 		overflow: hidden;
 		width: 100%;
+		//width: 768px;
 		height: 500px;
 	}
 	@include mobile {
+		overflow: hidden;
 		width: 100%;
 		height: 100%;
 	}
 
+}
+
+.adClose {
+  width: 50px;
+  height: 50px;
+  top: 0;
+  right: 0;
+  background-image: url(closeBtn.png);
+  z-index: 9999;
 }
 
 #main {
@@ -141,11 +152,10 @@ img {
 	@include tablet {
 		grid-template-columns: 37% 26% 37%;
 	}
+
 	@include mobile {
 		grid-template-columns: 50% 50%;
-		grid-template-rows: 33.33% 33.33% 33.33;
-		width: 100%;
-		height: 100%;
+		grid-template-rows: 33.33% 33.33% 33.33%;
 	}
 }
 
@@ -163,6 +173,8 @@ img {
 	backface-visibility: hidden;
 	-webkit-backface-visibility: hidden!important;
 	pointer-events: none;
+	background-repeat: no-repeat;
+
 }
 
 .text {
@@ -175,17 +187,21 @@ img {
 	-webkit-backface-visibility: hidden!important;
 	pointer-events: none;
 	transform: rotateY(180deg);
+	background-repeat: no-repeat;
+
 }
 
-.back {
+.img.back {
+	position: absolute;
 	transform: rotateY(180deg);
+	background-repeat: no-repeat;
 }
 
 .center {
 	grid-column: 2;
 	grid-row: 1 / span 2;
-	background-image: url(bgPattern.jpg);
-	background-repeat: repeat-y;
+	//background-image: url(bgPattern.jpg);
+	//background-repeat: repeat-y;
 
 	.logo {
 		position: absolute;
@@ -195,6 +211,19 @@ img {
 		width: 137px;
 		height: 139px;
 		background-image: url(youCan_logo.png);
+		background-repeat: no-repeat;
+	}
+	@include mobile {
+		grid-column: 1 / span 2;
+		grid-row: 2;
+
+		.logo {
+			width: 50%;
+			height: 70%;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
 	}
 }
 
@@ -202,15 +231,36 @@ img {
 	grid-column: 1;
 	grid-row: 1;
 
-	.img1.front {
+	.img1.front, .img1.back  {
 		background-image: url(bg_frame1.jpg);
 	}
-	.img1.back {
-		background-image: url(bg_frame1.jpg);
 
-	}
 	.text {
 		background-image: url(txt_frame1.png);
+		@include tablet {
+			background-size: 105%;
+			background-position: center center;
+		}
+		@include mobile {
+			background-size: 105%;
+			background-position: center center;
+		}
+	}
+
+	@include tablet {
+		.img1.front, .img1.back {
+			background-size: cover;
+			background-position: 70% center;
+		}
+	}
+	@include mobile {
+		grid-column: 1;
+		grid-row: 1;
+
+		.img1.front, .img1.back {
+			background-size: cover;
+			background-position: 70% center;
+		}
 	}
 }
 
@@ -218,14 +268,35 @@ img {
 	grid-column: 3;
 	grid-row: 1;
 
-	.img2.front {
+	.img2.front, .img2.back  {
 		background-image: url(bg_frame2.jpg);
+
 	}
-	.img2.back {
-		background-image: url(bg_frame2.jpg);
-	}
+
 	.text {
 		background-image: url(txt_frame2.png);
+		@include tablet {
+			background-size: 120%;
+			background-position: center center;
+		}
+		@include mobile {
+			background-size: 120%;
+			background-position: center center;
+		}
+	}
+	@include tablet {
+		.img2.front, .img2.back {
+			background-size: cover;
+			background-position: 70% center;
+		}
+	}
+	@include mobile {
+		grid-column: 2;
+		grid-row: 1;
+		.img2.front, .img2.back {
+			background-size: cover;
+			background-position: 70% center;
+		}
 	}
 }
 
@@ -233,14 +304,35 @@ img {
 	grid-column: 1;
 	grid-row: 2;
 
-	.img3.front {
+	.img3.front, .img3.back {
 		background-image: url(bg_frame3.jpg);
 	}
-	.img3.back {
-		background-image: url(bg_frame3.jpg);
-	}
+
 	.text {
 		background-image: url(txt_frame3.png);
+		@include tablet {
+			background-size: 120%;
+			background-position: center center;
+		}
+		@include mobile {
+			background-size: 120%;
+			background-position: center center;
+		}
+	}
+	@include tablet {
+		.img3.front, .img3.back {
+			background-size: cover;
+			background-position: 20% 100%;
+		}
+	}
+	@include mobile {
+		grid-column: 1;
+		grid-row: 3;
+
+		.img3.front, .img3.back {
+			background-size: cover;
+			background-position: 20% 100%;
+		}
 	}
 }
 
@@ -248,14 +340,37 @@ img {
 	grid-column: 3;
 	grid-row: 2;
 
-	.img4.front{
+	.img4.front, .img4.back {
 		background-image: url(bg_frame4.jpg);
 	}
-	.img4.back {
-		background-image: url(bg_frame4.jpg);
-	}
+
 	.text {
 		background-image: url(txt_frame4.png);
+
+		@include tablet {
+			background-size: 120%;
+			background-position: center center;
+		}
+		@include mobile {
+			background-size: 120%;
+			background-position: center center;
+		}
+
+	}
+	@include tablet {
+		.img4.front, .img4.back {
+			background-size: cover;
+			background-position: center center;
+		}
+	}
+	@include mobile {
+		grid-column: 2;
+		grid-row: 3;
+
+		.img4.front, .img4.back {
+			background-size: cover;
+			background-position: center center;
+		}
 	}
 }
 
@@ -275,6 +390,21 @@ img {
 		width: 137px;
 		height: 139px;
 		background-image: url(youCan_logo.png);
+		background-repeat: no-repeat;
+
+		@include tablet {
+			left: 13.05%;
+			transform: translate(-50%);
+		}
+
+		@include mobile {
+			top: 2%;
+			left: 50%;
+			width: 100px;
+			background-size: contain;
+			background-position: center center;
+			transform: translate(-50%);
+		}
 	}
 
 	.bigImg {
@@ -282,6 +412,19 @@ img {
 		height: 100%;
 		top: 0;
 		right: 0;
+		background-repeat: no-repeat;
+
+		@include tablet {
+			width: 73.9%;
+			background-position: center center;
+		}
+
+		@include mobile {
+			top: 28%;
+			width: 100%;
+			background-size: cover;
+			background-position: center center;
+		}
 
 	}
 
@@ -290,16 +433,40 @@ img {
 		height: 100%;
 		top: 0;
 		right: 0;
+		background-repeat: no-repeat;
+
+		@include tablet {
+			width: 73.9%;
+			background-size: cover;
+			background-position: center center;
+		}
+		@include mobile {
+			top: 10%;
+			width: 100%;
+			background-size: 100%;
+			background-position: center center;
+
+		}
 	}
 
 	.cta {
-		left: 614px;
 		bottom: 90px;
 		width: 291px;
 		height: 58px;
+		left: 50%;
+		transform: translate(-50%);
 		background-image: url(cta_learnMore.png);
 		background-size: 100%;
 		background-repeat: no-repeat;
+
+		@include mobile {
+			bottom: auto;
+			top: 50%;
+			width: 200px;
+			height: 40px;
+		}
+
+
 	}
 
 	.backBtn {
@@ -307,6 +474,14 @@ img {
 		left: 272px;
 		width: 64px;
 		height: 60px;
+
+		@include tablet {
+			left: 28%;
+		}
+		@include mobile {
+			top: 30%;
+			left: 2%;
+		}
 
 		.backBtnTxt {
 			width: 100%;
@@ -323,7 +498,6 @@ img {
 			background-size: 100%;
 			background-repeat: no-repeat;
 		}
-
 	}
 
 	.watchVideo {
@@ -358,10 +532,29 @@ img {
 		.videoHolder {
 			top: 18px;
 			left: 352px;
+			//left: 50%;
+			//transform: translate(-50%);
 			width: 820px;
 			height: 460px;
 			background-color: rgba(255, 255, 255, 0.8);
 
+			@include tablet {
+				width: 60%;
+				height: 60%;
+				left: auto;
+				right: 6%;
+				top: 50%;
+				transform: translate(0, -50%);
+			}
+
+			@include mobile {
+				width: 90%;
+				height: 35%;
+				left: 50%;
+				top: 50%;
+				right: auto;
+				transform: translate(-50%, 0);
+			}
 
 			.videoClose {
 				top: 0;
@@ -375,6 +568,8 @@ img {
 
 		}
 
+
+
 	}
 
 }
@@ -382,6 +577,9 @@ img {
 .overlay1 {
 	.bigImg {
 		background-image: url(bigImg_frame1.jpg);
+		@include mobile {
+			background-position: right center;
+		}
 	}
 	.bigText {
 		background-image: url(bigText_frame1.png);
@@ -412,7 +610,6 @@ img {
 	}
 	.cta {
 		background-color: #dd2a35;
-
 	}
 }
 
